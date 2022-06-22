@@ -1,0 +1,48 @@
+body{
+    min-height: 1450px;
+    max-height: 100%;
+}
+
+.title {
+    text-align: center;
+    margin-top: 80px;
+    background-color: #d6c794;
+    padding: 10px;
+}
+
+.about1 {
+    text-align: center;
+    max-width: 600px;
+    background-color: #d6c794;
+    padding: 10px;
+    border-radius: 10px;
+    flex-basis: 500px;
+    order: 1;
+
+}
+.about2 {
+    text-align: center;
+    background-color: #d6c794;
+    padding: 10px;
+    border-radius: 10px;
+    flex-basis: 500px;
+    order: 3;
+
+}
+
+.dog {
+    max-width: 250px;
+    height: auto;
+    border-radius: 10px;
+    order: 2;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px 10px;
+    justify-content: center;
+    align-items: center;
+    
+}

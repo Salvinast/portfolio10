@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="../css/beginner.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+    <title>Front-end development</title>
+    <link rel="stylesheet" href="..//css/prism.css">
+</head>
+
+<body>
+
+    <nav>
+        <ul class="majorNavigation">
+            <li><a href="../index.html">Home</a></li>
+            <div class="dropdown">
+                <button class="dropbtn">What's happening</button>
+                <div class="dropdown-content">
+                    <a class="link1" href="../html/frontEnd.html">
+                        <h3 class="dpUpper">Development</h3>
+                        <h5 class="dpLower">HTML, CSS, JavaScript</h5>
+                    </a>
+                    <a class="link2" href="#">
+                        <h3 class="dpUpper">User centered design</h3>
+                        <h5 class="dpLower">Prototypes, usability, interaction design</h5>
+                    </a>
+                    <a class="link2" href="#">
+                        <h3 class="dpUpper">Media production</h3>
+                        <h5 class="dpLower">Photos, videos</h5>
+                    </a>
+                </div>
+            </div>
+            <li class="a1"><a href="../html/contact.html">Say Hello</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="bigdiv">
+        <section class="topics">
+            <h2>Challenges</h2>
+            <h4>Simple</h4>
+            <li id="simpleAdding">Simple adding</li>
+            <li id="firstFactorial">First factorial</li>
+            <li id="wordCount">Word count</li>
+            <li id="longestWord">Longest word</li>
+            <li id="wordCapitalization">Word capitalization</li>
+            <h4>JavaScript</h4>
+            <li id="rps">Rock Paper Scissors</li>
+            <li id="ttt">Tic tac toe</li>
+            <li id="guessNumber">Guess the number</li>
+        </section>
+
+        <section id="empty">
+            <p>Here you can see challenges I have coded during my second semester.</p>
+        </section>
+
+        <section id="simpleAddingExplanation">
+            <div class="explanationFlex">
+                <div class="left">
+                    <h2 class="explanationHeader">Simple adding</h2>
+                    <p class="explanation1">This function adds up all the numbers from 1 to user inputed number. <br>
+                        For example: if the input is 4 then the program will return 10 because 1 + 2 + 3 + 4 = 10.</p>
+
+                </div>
+                <div class="right">
+                    <pre>
+                        <code class="language-javascript">
+                            function calculation(form) {
+                                var inputNumber = form.inputBox.value;
+                                var calculatedNumber = Number(inputNumber) * (Number(inputNumber) + 1) / 2
+                                document.getElementById('result1').innerHTML = calculatedNumber;
+                            };
+                    </code>
+                    </pre>
+                </div>
+                <div>
+                    <form>
+                        <input type="number" name="inputBox" class="input1" value="">
+                        <input type="button" name="button" value="Submit" class="button1"
+                            onClick="calculation(this.form)">
+                        <label id="result1"></label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="firstFactorialExplanation">
+            <div class="explanationFlex">
+                <div class="left">
+                    <h2 class="explanationHeader">First factorial</h2>
+                    <p class="explanation1">This function takes the user inputed number being passed and return the
+                        factorial of it. <br>
+                        For example: if the input is 4 then the program will return 24, because 4 * 3 * 2 * 1 = 24.</p>
+                </div>
+                <div class="right">
+                    <pre>
+                        <code class="language-javascript">
+                            function firstFactorial(form) {
+                                var num = form.inputBox.value;
+                                var num = Number(num);
+                                var result = 1;
+                                for (var i = 2; i <= num; i++) {
+                                    result *= i;
+                                }
+                                document.getElementById('result2').innerHTML = result;
+                            };
+                        </code>
+                    </pre>
+                </div>
+                <div>
+                    <form>
+                        <input type="number" name="inputBox" class="input2" value="">
+                        <input type="button" name="button" value="Submit" class="button3"
+                            onClick="firstFactorial(this.form)">
+                        <label id="result2"></label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+
+        <section id="wordCountExplanation">
+            <div class="explanationFlex">
+                <div class="left">
+                    <h2 class="explanationHeader">Word count</h2>
+                    <p class="explanation1">This function takes the inputed sentence being passed and returns the number
+                        of words the string contains. <br>
+                        For example: if the input is "I love studying at Fontys" then the program will return 5, because
+                        the sentence has 5 words in it.</p>
+
+                </div>
+                <div class="right">
+                    <pre>
+                        <code class="language-javascript">
+                            var calculate = function () {
+                                var string = document.getElementById('input4').value;
+                                var length = string.split(/[^\s]+/).length - 1;
+                                document.getElementById('count').innerHTML = length;
+                            };
+                        </code>
+                    </pre>
+                </div>
+                <div>
+                    <form>
+                        <input type="string" id="input4" class="input4" value="">
+                        <input type="button" value="Submit" class="button4" onClick="calculate()">
+                        <label id="count"></label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="longestWordExplanation">
+            <div class="explanationFlex">
+                <div class="left">
+                    <h2 class="explanationHeader">Longest word</h2>
+                    <p class="explanation1">This function takes the inputed sentence being passed and returns the
+                        largest word in the string. If there are two or more words that are the same length, program
+                        returns the first word from the string with that length. <br>
+                        For example: if the input is "I love studying at Fontys" then the program will return word
+                        "studying", because this word is largest in the sentence.</p>
+
+                </div>
+                <div class="right">
+                    <pre>
+                        <code class="language-javascript">
+                            function longestWord(form) {
+                                var sentence = form.inputBox.value;
+                                var str = sentence.split(" ");
+                                var longest = 0;
+                                var word = null;
+                                str.forEach(function (str) {
+                                    if (longest < str.length) {
+                                        longest = str.length;
+                                        word = str;
+                                    }
+                                });
+                                var characters = word.length;
+                                document.getElementById('result3').innerHTML = "Word " + word + " is " + characters + " characters long.";
+                            };
+                        </code>
+                    </pre>
+                </div>
+                <div>
+                    <form>
+                        <input type="string" name="inputBox" class="input3" value="">
+                        <input type="button" name="button" value="Submit" class="button2"
+                            onClick="longestWord(this.form)">
+                        <label id="result3"></label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="wordCapitalizationExplanation">
+            <div class="explanationFlex">
+                <div class="left">
+                    <h2 class="explanationHeader">Word capitalization</h2>
+                    <p class="explanation1">This function takes the inputed sentence being passed and capitalizes the
+                        first letter of each word. Words will be separated by only one space.<br>
+                        For example: if the input is "I love studying at Fontys" then the program will return a sentence
+                        "I Love Studying At Fontys".</p>
+
+                </div>
+                <div class="right">
+                    <pre>
+                        <code class="language-javascript">
+                            function capitalize() {
+                                var mySentence = document.getElementById('input5').value;
+                                const words = mySentence.split(" ");
+                
+                                for (let i = 0; i < words.length; i++) {
+                                    words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+                                }
+                
+                                finalWords = words.join(" ");
+                
+                                document.getElementById('capitalizeResult').innerHTML = finalWords;
+                                console.log(finalWords)
+                            };
+                        </code>
+                    </pre>
+                </div>
+                <div>
+                    <form>
+                        <input type="string" id="input5" class="input5" value="">
+                        <input type="button" value="Submit" class="button5" onClick="capitalize()">
+                        <label id="capitalizeResult"></label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="rpsExplanation">
+            <div>
+                <div>
+                    <h2 class="explanationHeader">Rock Paper Scissors game</h2> <br>
+
+                </div>
+                <div>
+                    <pre class="language-markup">
+                        <code>
+
+                            &lt;h1 id="info">Player 1 choose&lt;/h1>
+                            &lt;h2 id="answer">&lt;/h2>
+                            &lt;button id="rock">Rock&lt;/button>
+                            &lt;button id="paper">Paper&lt;/button>
+                            &lt;button id="scissors">Scissors&lt;/button>
+
+                        </code>
+                    </pre>
+                    <p class="p0">Explanation of HTML</p>
+                    <p class="p1">
+                        The id="info" and id="answer" are created to display which player turn it is and the winner of
+                        the game. <br>
+                        Then buttons for the rock, paper and scissors are created with accompanying id's.
+                    </p>
+
+                    <pre class="language-javascript">
+                        <code>
+                                const optionR = document.getElementById("rock");
+                                const optionP = document.getElementById("paper");
+                                const optionS = document.getElementById("scissors");
+                                const answer = document.getElementById('answer');
+                                const info = document.getElementById('info');
+                                var gamestate = 1;
+                                var p1 = "";
+                                var p2 = "";
+                        </code>
+                    </pre>
+                    <p style="text-align: left;">Explanation of JavaScript <br> Variables for game state, player 1 and
+                        player 2 are created.</p>
+
+
+                </div>
+
+                <div>
+                    <pre class="language-javascript">
+                        <code>
+                            optionR.addEventListener("click", function () {
+                                gamestate == 1 ? (p1 = "Rock", gamestate++, info.innerHTML = "Player 2 choose", answer.innerHTML = "")
+                                    : (p2 = "Rock", compareInputs(p1, p2), gamestate = 1, info.innerHTML = "Player 1 choose")
+                            });
+
+                            optionP.addEventListener("click", function () {
+                                gamestate == 1 ? (p1 = "Paper", gamestate++, info.innerHTML = "Player 2 choose", answer.innerHTML = "")
+                                    : (p2 = "Paper", compareInputs(p1, p2), gamestate = 1, info.innerHTML = "Player 1 choose")
+                            });
+
+                            optionS.addEventListener("click", function () {
+                                gamestate == 1 ? (p1 = "Scissors", gamestate++, info.innerHTML = "Player 2 choose", answer.innerHTML = "")
+                                    : (p2 = "Scissors", compareInputs(p1, p2), gamestate = 1, info.innerHTML = "Player 1 choose")
+                            });
+                        </code>
+                    </pre>
+                    <p style="text-align: left;">A function for every button is created. <br> When one of the buttons is
+                        clicked by player 1 the function sets the variable of p1 to the clicked button value, adds 1 to
+                        the game state and sets the info variable to say "Player 2 choose". <br>
+                        When one of the buttons is clicked again the function sets the variable of p2 to the clicked
+                        button value. The compareInputs function is initiated with the updated p1 and p2 variables. Game
+                        state is set back to 1 and the info variable is set to say "Player 1 choose". </p>
+                </div>
+
+                <div>
+                    <pre class="language-javascript">
+                        <code>
+                            function compareInputs(p1, p2) {
+
+                                (p1 === p2) ? answer.innerHTML = "It's a tie"
+                                    : p1 === "Rock" && p2 === "Scissors" ? answer.innerHTML = "Player 1 wins"
+                                        : p1 === "Paper" && p2 === "Rock" ? answer.innerHTML = "Player 1 wins"
+                                            : p1 === "Scissors" && p2 === "Paper" ? answer.innerHTML = "Player 1 wins"
+                                                : answer.innerHTML = "Player 2 wins";
+                            };
+                        </code>
+                    </pre>
+                    <p style="text-align: left;">A function compareInputs is created which compares the input of player
+                        1 and player 2. <br>
+                        If both inputs are the same the answer is changed to "It's a tie". <br>
+                        If first input is "Rock" and the second is "Scissors" then asnwer is changed to "Player 1 wins".
+                        <br>
+                        Next two conditions are analogically simillar. <br>
+                        Final condition is if none of the above conditions are true the answer is changed to "Player 2
+                        wins".
+
+
+                    </p>
+                </div>
+                <div>
+                    <section class="rpsFlex">
+                        <div class="test1">
+                            <p>Here is the outcome of the code above with some CSS additions.</p>
+                            <h1 id="info">Player 1 choose</h1>
+                        </div>
+                        <div class="test2">
+                            <button id="rock">Rock</button>
+                            <button id="paper">Paper</button>
+                            <button id="scissors">Scissors</button>
+                        </div>
+                        <h1 id="answer"></h1>
+                    </section>
+
+
+
+                </div>
+            </div>
+        </section>
+
+        <section id="tttExplanation">
+            <div>
+                <div>
+                    <h2 class="explanationHeader">Tic Tac toe game</h2> <br>
+
+                </div>
+                <div>
+                    <pre class="language-markup">
+                        <code>
+                            &lt;h1 class="game--title">Tic Tac Toe&lt;/h1>
+                            &lt;div class="game--container">
+                            &lt;div data-cell-index="0" class="cell">&lt;/div>
+                            &lt;div data-cell-index="1" class="cell">&lt;/div>
+                            &lt;div data-cell-index="2" class="cell">&lt;/div>
+                            &lt;div data-cell-index="3" class="cell">&lt;/div>
+                            &lt;div data-cell-index="4" class="cell">&lt;/div>
+                            &lt;div data-cell-index="5" class="cell">&lt;/div>
+                            &lt;div data-cell-index="6" class="cell">&lt;/div>
+                            &lt;div data-cell-index="7" class="cell">&lt;/div>
+                            &lt;div data-cell-index="8" class="cell">&lt;/div>
+                            &lt;/div>
+                            &lt;h2 class="game--status"> &lt;/h2>
+                            &lt;button class="game--restart">Restart Game &lt;/button>
+
+                        </code>
+                    </pre>
+
+
+                    <pre class="language-javascript">
+                        <code>
+                            const statusDisplay = document.querySelector('.game--status');
+
+                            let gameActive = true;
+                            let currentPlayer = "X";
+                            let gameState = ["", "", "", "", "", "", "", "", ""];
+                        
+                            const winningMessage = () => `Player ${currentPlayer} has won!`;
+                            const drawMessage = () => `Game ended in a draw!`;
+                            const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+                        
+                            statusDisplay.innerHTML = currentPlayerTurn();
+                        
+                            const winningConditions = [
+                                [0, 1, 2],
+                                [3, 4, 5],
+                                [6, 7, 8],
+                                [0, 3, 6],
+                                [1, 4, 7],
+                                [2, 5, 8],
+                                [0, 4, 8],
+                                [2, 4, 6]
+                            ];
+                        </code>
+                    </pre>
+
+
+                </div>
+
+                <div>
+                    <pre class="language-javascript">
+                        <code>
+                            function handleCellPlayed(clickedCell, clickedCellIndex) {
+                                gameState[clickedCellIndex] = currentPlayer;
+                                clickedCell.innerHTML = currentPlayer;
+                            }
+                        </code>
+                    </pre>
+                    
+                </div>
+
+                <div>
+                    <pre class="language-javascript">
+                        <code>
+                            function handlePlayerChange() {
+                                currentPlayer = currentPlayer === "X" ? "O" : "X";
+                                statusDisplay.innerHTML = currentPlayerTurn();
+                            }
+                        </code>
+                    </pre>
+                    
+                </div>
+
+                <pre class="language-javascript">
+                    <code>
+                        function handleResultValidation() {
+                            let roundWon = false;
+                            for (let i = 0; i <= 7; i++) {
+                                const winCondition = winningConditions[i];
+                                let a = gameState[winCondition[0]];
+                                let b = gameState[winCondition[1]];
+                                let c = gameState[winCondition[2]];
+                                if (a === '' || b === '' || c === '') {
+                                    continue;
+                                }
+                                if (a === b && b === c) {
+                                    roundWon = true;
+                                    break
+                                }
+                            }
+                    
+                            if (roundWon) {
+                                statusDisplay.innerHTML = winningMessage();
+                                gameActive = false;
+                                return;
+                            }
+                    
+                            let roundDraw = !gameState.includes("");
+                            if (roundDraw) {
+                                statusDisplay.innerHTML = drawMessage();
+                                gameActive = false;
+                                return;
+                            }
+                    
+                            handlePlayerChange();
+                        }
+                    </code>
+                </pre>
+                
+            </div>
+
+            <div>
+                <pre class="language-javascript">
+                    <code>
+                        function handleCellClick(clickedCellEvent) {
+                            const clickedCell = clickedCellEvent.target;
+                            const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
+                    
+                            if (gameState[clickedCellIndex] !== "" || !gameActive) {
+                                return;
+                            }
+                    
+                            handleCellPlayed(clickedCell, clickedCellIndex);
+                            handleResultValidation();
+                        }
+                    </code>
+                </pre>
+                
+            </div>
+
+            <div>
+                <pre class="language-javascript">
+                    <code>
+                        function handleRestartGame() {
+                            gameActive = true;
+                            currentPlayer = "X";
+                            gameState = ["", "", "", "", "", "", "", "", ""];
+                            statusDisplay.innerHTML = currentPlayerTurn();
+                            document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+                        }
+                    
+                        document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+                        document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+                    </code>
+                </pre>
+                
+            </div>
+
+            <section>
+                <h1 class="game--title">Tic Tac Toe</h1>
+                <div class="game--container">
+                    <div data-cell-index="0" class="cell"></div>
+                    <div data-cell-index="1" class="cell"></div>
+                    <div data-cell-index="2" class="cell"></div>
+                    <div data-cell-index="3" class="cell"></div>
+                    <div data-cell-index="4" class="cell"></div>
+                    <div data-cell-index="5" class="cell"></div>
+                    <div data-cell-index="6" class="cell"></div>
+                    <div data-cell-index="7" class="cell"></div>
+                    <div data-cell-index="8" class="cell"></div>
+                </div>
+                <h2 class="game--status"></h2>
+                <button class="game--restart">Restart Game</button>
+            </section>
+            </div>
+        </section>
+
+        <section id="guessNumberExplanation">
+            <div class="explanationFlex">
+                <div class="left">
+                    <h2 class="explanationHeader">Word count</h2>
+                    <p class="explanation1">This function takes the inputed sentence being passed and returns the number
+                        of words the string contains. <br>
+                        For example: if the input is "I love studying at Fontys" then the program will return 5, because
+                        the sentence has 5 words in it.</p>
+
+                </div>
+                <div class="right">
+                    <pre>
+                        <code class="language-javascript">
+                            var calculate = function () {
+                                var string = document.getElementById('input4').value;
+                                var length = string.split(/[^\s]+/).length - 1;
+                                document.getElementById('count').innerHTML = length;
+                            };
+                        </code>
+                    </pre>
+                </div>
+                <div>
+                    <form>
+                        <input type="string" id="input4" class="input4" value="">
+                        <input type="button" value="Submit" class="button4" onClick="calculate()">
+                        <label id="count"></label>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+
+
+
+    </main>
+    <script>
+        function calculation(form) {
+            var inputNumber = form.inputBox.value;
+            var calculatedNumber = Number(inputNumber) * (Number(inputNumber) + 1) / 2
+            document.getElementById('result1').innerHTML = calculatedNumber;
+        };
+
+        function firstFactorial(form) {
+            var num = form.inputBox.value;
+            var num = Number(num);
+            var result = 1;
+            for (var i = 2; i <= num; i++) {
+                result *= i;
+            }
+            document.getElementById('result2').innerHTML = result;
+        };
+
+        function longestWord(form) {
+            var sentence = form.inputBox.value;
+            var str = sentence.split(" ");
+            var longest = 0;
+            var word = null;
+            str.forEach(function (str) {
+                if (longest < str.length) {
+                    longest = str.length;
+                    word = str;
+                }
+            });
+            var characters = word.length;
+            document.getElementById('result3').innerHTML = "Word " + word + " is " + characters + " characters long.";
+        };
+
+        var calculate = function () {
+            var string = document.getElementById('input4').value;
+            var length = string.split(/[^\s]+/).length - 1;
+            document.getElementById('count').innerHTML = length;
+        };
+
+        function capitalize() {
+            var mySentence = document.getElementById('input5').value;
+            const words = mySentence.split(" ");
+
+            for (let i = 0; i < words.length; i++) {
+                words[i] = words[i][0].toUpperCase() + words[i].substr(1);
+            }
+
+            finalWords = words.join(" ");
+
+            document.getElementById('capitalizeResult').innerHTML = finalWords;
+            console.log(finalWords)
+        };
+
+
+        const topic1 = document.getElementById('simpleAdding');
+        const topic2 = document.getElementById('firstFactorial');
+        const topic3 = document.getElementById('wordCount');
+        const topic4 = document.getElementById('longestWord');
+        const topic5 = document.getElementById('wordCapitalization');
+        const topic6 = document.getElementById('rps');
+        const topic7 = document.getElementById('ttt');
+        const topic8 = document.getElementById('guessNumber');
+        const nothing = document.getElementById('empty');
+        const arps = document.getElementById('p1ch');
+
+        const explanation1 = document.getElementById('simpleAddingExplanation');
+        const explanation2 = document.getElementById('firstFactorialExplanation');
+        const explanation3 = document.getElementById('wordCountExplanation');
+        const explanation4 = document.getElementById('longestWordExplanation');
+        const explanation5 = document.getElementById('wordCapitalizationExplanation');
+        const explanation6 = document.getElementById('rpsExplanation');
+        const explanation7 = document.getElementById('tttExplanation');
+        const explanation8 = document.getElementById('guessNumberExplanation');
+
+        topic1.addEventListener('click', function handleClick() {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color: #cecfd3';
+            topic2.style.cssText = 'background-color: white';
+            topic3.style.cssText = 'background-color: white';
+            topic4.style.cssText = 'background-color: white';
+            topic5.style.cssText = 'background-color:white';
+            topic6.style.cssText = 'background-color:white';
+            topic7.style.cssText = 'background-color:white';
+            topic8.style.cssText = 'background-color:white';
+
+            explanation1.style.cssText = 'display:block';
+            explanation2.style.cssText = 'display:none';
+            explanation3.style.cssText = 'display:none';
+            explanation4.style.cssText = 'display:none';
+            explanation5.style.cssText = 'display:none';
+            explanation6.style.cssText = 'display:none';
+            explanation7.style.cssText = 'display:none';
+            explanation8.style.cssText = 'display:none';
+        });
+
+        topic2.addEventListener('click', function handleCick2() {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color: white';
+            topic2.style.cssText = 'background-color: #cecfd3';
+            topic3.style.cssText = 'background-color: white';
+            topic4.style.cssText = 'background-color: white';
+            topic5.style.cssText = 'background-color:white';
+            topic6.style.cssText = 'background-color:white';
+            topic7.style.cssText = 'background-color:white';
+            topic8.style.cssText = 'background-color:white';
+
+            explanation1.style.cssText = 'display:none';
+            explanation2.style.cssText = 'display:block';
+            explanation3.style.cssText = 'display:none';
+            explanation4.style.cssText = 'display:none';
+            explanation5.style.cssText = 'display:none';
+            explanation6.style.cssText = 'display:none';
+            explanation7.style.cssText = 'display:none';
+            explanation8.style.cssText = 'display:none';
+        });
+
+        topic3.addEventListener('click', function handleClick3() {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color:white';
+            topic2.style.cssText = 'background-color:white';
+            topic3.style.cssText = 'background-color:#cecfd3';
+            topic4.style.cssText = 'background-color: white';
+            topic5.style.cssText = 'background-color:white';
+            topic6.style.cssText = 'background-color:white';
+            topic7.style.cssText = 'background-color:white';
+            topic8.style.cssText = 'background-color:white';
+
+            explanation1.style.cssText = 'display:none';
+            explanation2.style.cssText = 'display:none';
+            explanation3.style.cssText = 'display:block';
+            explanation4.style.cssText = 'display:none';
+            explanation5.style.cssText = 'display:none';
+            explanation6.style.cssText = 'display:none';
+            explanation7.style.cssText = 'display:none';
+            explanation8.style.cssText = 'display:none';
+
+        });
+
+        topic4.addEventListener('click', function handleClick4() {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color:white';
+            topic2.style.cssText = 'background-color:white';
+            topic3.style.cssText = 'background-color:white';
+            topic4.style.cssText = 'background-color:#cecfd3';
+            topic5.style.cssText = 'background-color:white';
+            topic6.style.cssText = 'background-color:white';
+            topic7.style.cssText = 'background-color:white';
+            topic8.style.cssText = 'background-color:white';
+
+            explanation1.style.cssText = 'display:none';
+            explanation2.style.cssText = 'display:none';
+            explanation3.style.cssText = 'display:none';
+            explanation4.style.cssText = 'display:block';
+            explanation5.style.cssText = 'display:none';
+            explanation6.style.cssText = 'display:none';
+            explanation7.style.cssText = 'display:none';
+            explanation8.style.cssText = 'display:none';
+
+        });
+
+        topic5.addEventListener('click', function handleClick5() {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color:white';
+            topic2.style.cssText = 'background-color:white';
+            topic3.style.cssText = 'background-color:white';
+            topic4.style.cssText = 'background-color:white';
+            topic5.style.cssText = 'background-color:#cecfd3';
+            topic6.style.cssText = 'background-color:white';
+            topic7.style.cssText = 'background-color:white';
+            topic8.style.cssText = 'background-color:white';
+
+            explanation1.style.cssText = 'display:none';
+            explanation2.style.cssText = 'display:none';
+            explanation3.style.cssText = 'display:none';
+            explanation4.style.cssText = 'display:none';
+            explanation5.style.cssText = 'display:block';
+            explanation6.style.cssText = 'display:none';
+            explanation7.style.cssText = 'display:none';
+            explanation8.style.cssText = 'display:none';
+
+        });
+
+        topic6.addEventListener('click', function handleClick6() {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color:white';
+            topic2.style.cssText = 'background-color:white';
+            topic3.style.cssText = 'background-color:white';
+            topic4.style.cssText = 'background-color:white';
+            topic5.style.cssText = 'background-color:white';
+            topic6.style.cssText = 'background-color:#cecfd3';
+            topic7.style.cssText = 'background-color:white';
+            topic8.style.cssText = 'background-color:white';
+
+
+            explanation1.style.cssText = 'display:none';
+            explanation2.style.cssText = 'display:none';
+            explanation3.style.cssText = 'display:none';
+            explanation4.style.cssText = 'display:none';
+            explanation5.style.cssText = 'display:none';
+            explanation6.style.cssText = 'display:block';
+            explanation7.style.cssText = 'display:none';
+            explanation8.style.cssText = 'display:none';
+
+
+
+        });
+
+        topic7.addEventListener('click', function handleClick7() {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color:white';
+            topic2.style.cssText = 'background-color:white';
+            topic3.style.cssText = 'background-color:white';
+            topic4.style.cssText = 'background-color:white';
+            topic5.style.cssText = 'background-color:white';
+            topic6.style.cssText = 'background-color:white';
+            topic7.style.cssText = 'background-color:#cecfd3';
+            topic8.style.cssText = 'background-color:white';
+
+
+            explanation1.style.cssText = 'display:none';
+            explanation2.style.cssText = 'display:none';
+            explanation3.style.cssText = 'display:none';
+            explanation4.style.cssText = 'display:none';
+            explanation5.style.cssText = 'display:none';
+            explanation6.style.cssText = 'display:none';
+            explanation7.style.cssText = 'display:block';
+            explanation8.style.cssText = 'display:none';
+        })
+
+        topic8.addEventListener('click', function handleClick8  () {
+            nothing.style.display = 'none';
+
+            topic1.style.cssText = 'background-color:white';
+            topic2.style.cssText = 'background-color:white';
+            topic3.style.cssText = 'background-color:white';
+            topic4.style.cssText = 'background-color:white';
+            topic5.style.cssText = 'background-color:white';
+            topic6.style.cssText = 'background-color:white';
+            topic7.style.cssText = 'background-color:white';
+            topic8.style.cssText = 'background-color:#cecfd3';
+
+
+            explanation1.style.cssText = 'display:none';
+            explanation2.style.cssText = 'display:none';
+            explanation3.style.cssText = 'display:none';
+            explanation4.style.cssText = 'display:none';
+            explanation5.style.cssText = 'display:none';
+            explanation6.style.cssText = 'display:none';
+            explanation7.style.cssText = 'display:none';
+            explanation8.style.cssText = 'display:block';
+        })
+
+
+
+
+    </script>
+
+    <script>
+        const statusDisplay = document.querySelector('.game--status');
+
+        let gameActive = true;
+        let currentPlayer = "X";
+        let gameState = ["", "", "", "", "", "", "", "", ""];
+
+        const winningMessage = () => `Player ${currentPlayer} has won!`;
+        const drawMessage = () => `Game ended in a draw!`;
+        const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
+
+        statusDisplay.innerHTML = currentPlayerTurn();
+
+        const winningConditions = [
+            [0, 1, 2],
+            [3, 4, 5],
+            [6, 7, 8],
+            [0, 3, 6],
+            [1, 4, 7],
+            [2, 5, 8],
+            [0, 4, 8],
+            [2, 4, 6]
+        ];
+
+        function handleCellPlayed(clickedCell, clickedCellIndex) {
+            gameState[clickedCellIndex] = currentPlayer;
+            clickedCell.innerHTML = currentPlayer;
+        }
+
+        function handlePlayerChange() {
+            currentPlayer = currentPlayer === "X" ? "O" : "X";
+            statusDisplay.innerHTML = currentPlayerTurn();
+        }
+
+        function handleResultValidation() {
+            let roundWon = false;
+            for (let i = 0; i <= 7; i++) {
+                const winCondition = winningConditions[i];
+                let a = gameState[winCondition[0]];
+                let b = gameState[winCondition[1]];
+                let c = gameState[winCondition[2]];
+                if (a === '' || b === '' || c === '') {
+                    continue;
+                }
+                if (a === b && b === c) {
+                    roundWon = true;
+                    break
+                }
+            }
+
+            if (roundWon) {
+                statusDisplay.innerHTML = winningMessage();
+                gameActive = false;
+                return;
+            }
+
+            let roundDraw = !gameState.includes("");
+            if (roundDraw) {
+                statusDisplay.innerHTML = drawMessage();
+                gameActive = false;
+                return;
+            }
+
+            handlePlayerChange();
+        }
+
+        function handleCellClick(clickedCellEvent) {
+            const clickedCell = clickedCellEvent.target;
+            const clickedCellIndex = parseInt(clickedCell.getAttribute('data-cell-index'));
+
+            if (gameState[clickedCellIndex] !== "" || !gameActive) {
+                return;
+            }
+
+            handleCellPlayed(clickedCell, clickedCellIndex);
+            handleResultValidation();
+        }
+
+        function handleRestartGame() {
+            gameActive = true;
+            currentPlayer = "X";
+            gameState = ["", "", "", "", "", "", "", "", ""];
+            statusDisplay.innerHTML = currentPlayerTurn();
+            document.querySelectorAll('.cell').forEach(cell => cell.innerHTML = "");
+        }
+
+        document.querySelectorAll('.cell').forEach(cell => cell.addEventListener('click', handleCellClick));
+        document.querySelector('.game--restart').addEventListener('click', handleRestartGame);
+    </script>
+
+<!--rps-->
+    <script>
+        const optionR = document.getElementById("rock");
+        const optionP = document.getElementById("paper");
+        const optionS = document.getElementById("scissors");
+        const answer = document.getElementById('answer');
+        const info = document.getElementById('info');
+        var gamestate = 1;
+        var p1 = "";
+        var p2 = "";
+
+
+        optionR.addEventListener("click", function () {
+            gamestate == 1 ? (p1 = "Rock", gamestate++, info.innerHTML = "Player 2 choose", answer.innerHTML = "")
+                : (p2 = "Rock", compareInputs(p1, p2), gamestate = 1, info.innerHTML = "Player 1 choose")
+        });
+
+        optionP.addEventListener("click", function () {
+            gamestate == 1 ? (p1 = "Paper", gamestate++, info.innerHTML = "Player 2 choose", answer.innerHTML = "")
+                : (p2 = "Paper", compareInputs(p1, p2), gamestate = 1, info.innerHTML = "Player 1 choose")
+        });
+
+        optionS.addEventListener("click", function () {
+            gamestate == 1 ? (p1 = "Scissors", gamestate++, info.innerHTML = "Player 2 choose", answer.innerHTML = "")
+                : (p2 = "Scissors", compareInputs(p1, p2), gamestate = 1, info.innerHTML = "Player 1 choose")
+        });
+
+        function compareInputs(p1, p2) {
+
+            (p1 === p2) ? answer.innerHTML = "Its a tie"
+                : p1 === "Rock" && p2 === "Scissors" ? answer.innerHTML = "Player 1 wins"
+                    : p1 === "Paper" && p2 === "Rock" ? answer.innerHTML = "Player 1 wins"
+                        : p1 === "Scissors" && p2 === "Paper" ? answer.innerHTML = "Player 1 wins"
+                            : answer.innerHTML = "Player 2 wins";
+        };
+    </script>
+    <script src="../js/prism.js"></script>
+
+</body>
+
+</html>
